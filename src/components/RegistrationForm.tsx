@@ -147,22 +147,31 @@ export function RegistrationForm() {
     }
 
     try {
-      await setDoc(doc(db, 'registrations', registrationId), payload);
+      const writePromise = setDoc(doc(db, 'registrations', registrationId), payload);
+      const timeoutPromise = new Promise<never>((_, reject) => {
+        window.setTimeout(() => reject(new Error('FIRESTORE_TIMEOUT')), 12000);
+      });
+
+      await Promise.race([writePromise, timeoutPromise]);
       const firstName = fullName.trim().split(/\s+/)[0] || 'Participante';
       setSubmittedName(firstName);
       setCountdown(4);
       setAutoRedirectActive(true);
     } catch (error) {
+      setSubmitError(
+        'Não foi possível salvar sua inscrição agora. Tente novamente ou acesse diretamente o grupo abaixo.',
+      );
       if (
         error instanceof Error &&
         (error.message.includes('Missing or insufficient permissions') ||
           error.message.includes('PERMISSION_DENIED'))
       ) {
-        handleFirestoreError(error, OperationType.CREATE, docPath);
+        try {
+          handleFirestoreError(error, OperationType.CREATE, docPath);
+        } catch {
+          // Structured error already logged by handleFirestoreError; UI fallback remains visible.
+        }
       }
-      setSubmitError(
-        'Não foi possível salvar sua inscrição agora. Tente novamente ou acesse diretamente o grupo abaixo.',
-      );
     } finally {
       setIsSubmitting(false);
     }
