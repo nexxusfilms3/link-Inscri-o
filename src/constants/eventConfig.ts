@@ -40,36 +40,36 @@ export interface SessionModule {
 export const SESSION_MODULES: SessionModule[] = [
   {
     number: '01',
-    title: 'Cuidando das Emoções',
-    focus: 'Encerramento de ciclos e alívio emocional',
+    title: 'O que 2026 deixou em mim',
+    focus: '1ª Aula · Dia 07/12',
     description:
-      'Um olhar acolhedor para as vivências de 2026, reconhecendo sentimentos, limites e aprendizados para deixar o peso para trás antes de planejar o novo ano.',
+      'Um olhar acolhedor para as vivências de 2026, reconhecendo sentimentos, aprendizados e marcas emocionais do ano que está se encerrando.',
   },
   {
     number: '02',
-    title: 'Fortalecendo a Fé e a Identidade',
-    focus: 'Autoconhecimento e propósito de vida',
+    title: 'O que preciso encerrar e deixar para trás',
+    focus: '2ª Aula · Dia 14/12',
     description:
-      'Reconexão com sua essência, valores inegociáveis e espiritualidade saudável, alinhando mente, coração e decisões com aquilo que realmente importa.',
+      'Identificação de pesos, ciclos, culpas e padrões que não precisam continuar com você, abrindo espaço para alívio emocional e renovação.',
   },
   {
     number: '03',
-    title: 'Construindo Novos Caminhos',
-    focus: 'Clareza nas áreas essenciais da vida',
+    title: 'Quem desejo me tornar em 2027',
+    focus: '3ª Aula · Dia 21/12',
     description:
-      'Mapeamento equilibrado entre saúde emocional, família, rotina, projetos pessoais e carreira, substituindo a sobrecarga por direção consciente.',
+      'Reconexão com sua essência, fé, valores inegociáveis e identidade para enxergar com clareza a mulher que você deseja construir no novo ano.',
   },
   {
     number: '04',
-    title: 'Planejamento Prático Meu 2027',
-    focus: 'Metas possíveis com o E-book de Planejamento',
+    title: 'Minhas metas, meus limites e meu plano de ação',
+    focus: '4ª Aula · Dia 28/12',
     description:
-      'Estruturação passo a passo das metas e hábitos para 2027 utilizando os exercícios guiados do e-book exclusivo entregue às participantes.',
+      'Estruturação passo a passo de metas possíveis, limites saudáveis e ações práticas para 2027 com o apoio do E-book de Planejamento.',
   },
 ];
 
 export const SUMMARY_HIGHLIGHTS = [
-  { label: 'Início da Jornada', value: '30 de Novembro' },
+  { label: 'Datas dos Encontros', value: '07, 14, 21 e 28/12' },
   { label: 'Formato', value: '04 Encontros Online' },
   { label: 'Material Incluso', value: 'E-book de Planejamento' },
   { label: 'Acesso Imediato', value: 'Grupo Oficial WhatsApp' },

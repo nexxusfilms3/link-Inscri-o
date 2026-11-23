@@ -287,7 +287,7 @@ export function RegistrationForm() {
     >
       <div className="mb-7">
         <p className="text-sm font-medium text-[#A8803B] mb-1">
-          Inscrição Gratuita · Início em 30 de Novembro
+          Inscrição Gratuita · Dias 07, 14, 21 e 28 de Dezembro
         </p>
         <h3 className="font-display text-2xl sm:text-3xl font-semibold text-[#2E1639]">
           Reserve seu lugar e acesse o grupo

@@ -82,7 +82,7 @@ export default function App() {
                 <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs sm:text-sm font-medium text-[#634B6F] mb-5">
                   <span className="text-[#5B236E] font-semibold">Projeto Online para Mulheres</span>
                   <span aria-hidden="true">·</span>
-                  <span>Início em 30 de Novembro</span>
+                  <span>Dias 07, 14, 21 e 28 de Dezembro</span>
                   <span aria-hidden="true">·</span>
                   <span>04 Encontros + E-book</span>
                 </div>
@@ -199,7 +199,8 @@ export default function App() {
               </h2>
               <p className="text-base text-[#634B6F] mt-3 leading-relaxed">
                 Cada encontro foi estruturado para conduzir você da reflexão emocional à prática
-                concreta, com início marcado para o dia <strong className="text-[#2E1639]">30 de novembro</strong>.
+                concreta, com encontros nos dias{' '}
+                <strong className="text-[#2E1639]">07, 14, 21 e 28 de dezembro</strong>.
               </p>
             </div>
 
@@ -327,9 +328,9 @@ export default function App() {
                 </div>
 
                 <p className="text-base text-[#634B6F] leading-relaxed">
-                  Para participar dos encontros que começam no dia{' '}
-                  <strong className="text-[#2E1639]">30 de novembro</strong> e receber o e-book de
-                  planejamento, complete sua inscrição ao lado.
+                  Para participar dos encontros nos dias{' '}
+                  <strong className="text-[#2E1639]">07, 14, 21 e 28 de dezembro</strong> e receber o
+                  e-book de planejamento, complete sua inscrição ao lado.
                 </p>
 
                 <div className="space-y-4 pt-2 border-t border-[#E4D5EC]">
