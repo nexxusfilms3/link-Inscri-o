@@ -11,7 +11,12 @@ import {
   MessageCircle,
 } from 'lucide-react';
 import { db, handleFirestoreError, OperationType } from '../firebase';
-import { VALIDATION_RULES, WHATSAPP_GROUP_URL } from '../constants/eventConfig';
+import {
+  LEAD_NOTIFICATION_EMAIL,
+  LEAD_NOTIFICATION_RECIPIENT_NAME,
+  VALIDATION_RULES,
+  WHATSAPP_GROUP_URL,
+} from '../constants/eventConfig';
 
 interface FormErrors {
   fullName?: string;
@@ -35,6 +40,44 @@ function formatBrazilianPhone(input: string): string {
 function generateSafeRegistrationId(): string {
   const rand = Math.random().toString(36).slice(2, 10);
   return `reg-${Date.now()}-${rand}`;
+}
+
+async function notifyLeadByEmail(data: {
+  registrationId: string;
+  fullName: string;
+  whatsapp: string;
+  email: string;
+  cityState?: string;
+  expectation?: string;
+}): Promise<void> {
+  try {
+    await fetch(
+      `https://formsubmit.co/ajax/${encodeURIComponent(LEAD_NOTIFICATION_EMAIL)}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        keepalive: true,
+        body: JSON.stringify({
+          _subject: `Nova inscrição: ${data.fullName} — Meu 2027 com Propósito`,
+          _template: 'table',
+          _captcha: 'false',
+          _replyto: data.email,
+          Destinatario: LEAD_NOTIFICATION_RECIPIENT_NAME,
+          'Nome completo': data.fullName,
+          WhatsApp: data.whatsapp,
+          'E-mail': data.email,
+          'Cidade / Estado': data.cityState || 'Não informado',
+          'Expectativa para 2027': data.expectation || 'Não informado',
+          'ID Firebase': data.registrationId,
+        }),
+      },
+    );
+  } catch {
+    // Email notification is best-effort and must never block the WhatsApp group redirect.
+  }
 }
 
 export function RegistrationForm() {
@@ -153,6 +196,16 @@ export function RegistrationForm() {
       });
 
       await Promise.race([writePromise, timeoutPromise]);
+
+      void notifyLeadByEmail({
+        registrationId,
+        fullName: String(payload.fullName),
+        whatsapp: String(payload.whatsapp),
+        email: String(payload.email),
+        cityState: trimmedCity || undefined,
+        expectation: trimmedExpectation || undefined,
+      });
+
       const firstName = fullName.trim().split(/\s+/)[0] || 'Participante';
       setSubmittedName(firstName);
       setCountdown(4);

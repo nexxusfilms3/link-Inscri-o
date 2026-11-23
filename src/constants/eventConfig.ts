@@ -5,6 +5,8 @@ export const POSTER_IMAGE_PATH =
   '/assets/aistudio/WhatsApp_Image_2026-11-19_at_09.16.17_c2f6f9f1.jpeg';
 
 export const ADMIN_EMAIL = 'contato.yadastudio@gmail.com';
+export const LEAD_NOTIFICATION_EMAIL = 'nexxussocialmedia3@gmail.com';
+export const LEAD_NOTIFICATION_RECIPIENT_NAME = 'Gustavo Social 3';
 
 // Synchronized verbatim with firebase-blueprint.json & firestore.rules
 export const VALIDATION_RULES = {
