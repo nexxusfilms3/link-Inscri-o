@@ -80,7 +80,7 @@ export default function App() {
               {/* Left Narrative Column */}
               <div className="lg:col-span-7 flex flex-col justify-center">
                 <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs sm:text-sm font-medium text-[#634B6F] mb-5">
-                  <span className="text-[#5B236E] font-semibold">Projeto Online para Mulheres</span>
+                  <span className="text-[#5B236E] font-semibold">Imersão Online para Mulheres</span>
                   <span aria-hidden="true">·</span>
                   <span>Dias 07, 14, 21 e 28 de Dezembro</span>
                   <span aria-hidden="true">·</span>
@@ -188,19 +188,19 @@ export default function App() {
         </section>
 
         {/* Section 2: Os 4 Encontros Online */}
-        <section id="encontros" className="py-16 lg:py-20 bg-[#FAF7FC]">
+        <section id="encontros" className="py-16 lg:py-20 bg-[#4A1A5B]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mb-12">
-              <p className="text-sm font-medium text-[#A8803B] mb-2">
+              <p className="text-sm font-medium text-[#D6B575] mb-2">
                 Programação dos Encontros
               </p>
-              <h2 className="font-display text-3xl sm:text-4xl font-semibold text-[#2E1639] text-balance">
+              <h2 className="font-display text-3xl sm:text-4xl font-semibold text-white text-balance">
                 Quatro aulas online para alinhar emoções, fé e planejamento
               </h2>
-              <p className="text-base text-[#634B6F] mt-3 leading-relaxed">
+              <p className="text-base text-[#E4D5EC] mt-3 leading-relaxed">
                 Cada encontro foi estruturado para conduzir você da reflexão emocional à prática
                 concreta, com encontros nos dias{' '}
-                <strong className="text-[#2E1639]">07, 14, 21 e 28 de dezembro</strong>.
+                <strong className="text-white">07, 14, 21 e 28 de dezembro</strong>.
               </p>
             </div>
 
@@ -208,7 +208,7 @@ export default function App() {
               {SESSION_MODULES.map((module) => (
                 <article
                   key={module.number}
-                  className="bg-white border border-[#E4D5EC] rounded-2xl p-7 sm:p-8 flex flex-col justify-between"
+                  className="bg-white border border-[#D6B575]/40 rounded-2xl p-7 sm:p-8 flex flex-col justify-between shadow-sm"
                 >
                   <div>
                     <div className="flex items-baseline justify-between gap-4 mb-4 pb-4 border-b border-[#F3ECF7]">
